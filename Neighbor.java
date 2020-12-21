@@ -1,21 +1,17 @@
 
 public class Neighbor {
-	
 	private int weight;
-	
-	private Vertex dest;	
+
+	private Vertex destination;
 
 	public Neighbor(Vertex dest, int weightInput) {
 		weight = weightInput;
-		dest = dest;
+		destination = dest;
 	}
-
-	
+	public Vertex getDestination() {
+		return destination;
+	}
 	public int getWeight() {
 		return weight;
-	}
-	
-	public Vertex getDest() {
-		return dest;
 	}
 }

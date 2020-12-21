@@ -1,45 +1,32 @@
 import java.util.LinkedList;
 
 public class Vertex {
-	
 	private int id;
-
 	private LinkedList<Neighbor> neighbors;
-	
-	
-	public Vertex(int id) {
-		id = id;
+
+	public Vertex(int idInput) {
+		id = idInput;
 		neighbors = new LinkedList<Neighbor>();
 	}
-	
-	
-	public int getID() {
+		public int getID() {
 		return id;
 	}
-	
-	public LinkedList<Neighbor> getNeighbors(){
+	public LinkedList<Neighbor> getAllNeighbors(){
 		return neighbors;
-	}	
-	
+	}
 	public void addNeighbor(Vertex neighbor, Integer weight) {
 		neighbors.add(new Neighbor(neighbor, weight));
 	}
-	
-	
 	public void removeNeighbor(Vertex neighbor) {
-		neighbors.removeIf(n -> n.getDest().getID() == neighbor.getID());
+		neighbors.removeIf(n -> n.getDestination().getID() == neighbor.getID());
 	}
-	
-	
 	public String toString() {
-		int count = 0;
-		String output = String.format("id %s, adjacent: [", id);
+		String printMe = String.format("id %s, adjacent: [", id);
 		for (Neighbor n : neighbors) {
-			output = String.format("%s id: %s weight: %s,", output, n.getDest().getID(), n.getWeight());
-				count++;
+				printMe = String.format("%s id: %s weight: %s,", printMe, n.getDestination().getID(), n.getWeight());
 		}
-		output = output.substring(0, output.length()-1);
-		output = String.format("%s]", output);
-		return output;
+		printMe = printMe.substring(0, printMe.length()-1);
+		printMe = String.format("%s]", printMe);
+		return printMe;
 	}
 }

@@ -1,10 +1,7 @@
 
 public class Graph {
-	
-	// The verticals in the graph
+
 	private Vertex[] verticals;
-	
-	// number of verticals
 	private int verticalsCount;
 	
 
@@ -15,8 +12,6 @@ public class Graph {
 			verticals[i] = new Vertex(i);
 		}
 	}
-	
-	
 	public Vertex[] getVerticals() {
 		return verticals;
 	}
